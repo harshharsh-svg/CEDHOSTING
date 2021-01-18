@@ -1,100 +1,32 @@
-<div class="facebook-section">
-					<div class="container">
-					<div class="face-top">
-						<h5><img src="images/facebook.png"><span>I can’t believe my grand mothers making me take Out the garbage I’m rich fuck this I’m going home I don’t need this shit</span></h5>
-					</div>
-					</div>
-				</div>
-				<div class="footer-section">
-					<div class="container">
-						<div class="footer-grids">
-							<div class="col-md-3 footer-grid">
-								<h4>flickr widget</h4>
-								<div class="footer-top">
-									<div class="col-md-4 foot-top">
-										<img src="images/f1.jpg" class="img-responsive" alt=""/>
-									</div>
-									<div class="col-md-4 foot-top">
-									<img src="images/f2.jpg" class="img-responsive" alt=""/>
-									</div>
-									<div class="col-md-4 foot-top">
-									<img src="images/f3.jpg" class="img-responsive" alt=""/>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="footer-top second">
-									<div class="col-md-4 foot-top">
-									<img src="images/f4.jpg" class="img-responsive" alt=""/>
-									</div>
-									<div class="col-md-4 foot-top">
-									<img src="images/f1.jpg" class="img-responsive" alt=""/>
-									</div>
-									<div class="col-md-4 foot-top">
-									<img src="images/f2.jpg" class="img-responsive" alt=""/>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-							<div class="col-md-3 footer-grid">
-								<h4>tag cloud</h4>
-								<ul>
-								<li><a href="#">Premium</a></li>
-								<li><a href="#">Graphic</a></li>
-								<li><a href="#">1170px</a></li>
-								<li><a href="#">Photoshop Freebie</a></li>
-								<li><a href="#">Designer</a></li>
-								<li><a href="#">Themes</a></li>
-								<li><a href="#">thislooksgreat chris</a></li>
-								<li><a href="#">Lovely Area</a></li>
-								<li><a href="#">You might use it...</a></li>
-								</ul>
-							</div>
-							<div class="col-md-3 footer-grid">
-							<h4>recent posts</h4>
-								<div class="recent-grids">
-									<div class="col-md-4 recent-great">
-										<img src="images/f4.jpg" class="img-responsive" alt=""/>
-									</div>
-									<div class="col-md-8 recent-great1">
-										<a href="#">This is my lovely headline title for this footer section.</a>
-										<span>22 October 2014</span>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="recent-grids">
-									<div class="col-md-4 recent-great">
-										<img src="images/f1.jpg" class="img-responsive" alt=""/>
-									</div>
-									<div class="col-md-8 recent-great1">
-										<a href="#">This is my lovely headline title for this footer section.</a>
-										<span>22 October 2014</span>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-								<div class="recent-grids">
-									<div class="col-md-4 recent-great">
-										<img src="images/f3.jpg" class="img-responsive" alt=""/>
-									</div>
-									<div class="col-md-8 recent-great1">
-										<a href="#">This is my lovely headline title for this footer section.</a>
-										<span>22 October 2014</span>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-							<div class="col-md-3 footer-grid">
-								<h4>get in touch</h4>
-								<p>8901 Marmora Road</p>
-								<p>Glasgow, DO4 89GR.</p>
-								<p>Telephone : +1 234 567 890</p>
-								<p>Telephone : +1 234 567 890</p>
-								<p>FAX : + 1 234 567 890</p>
-								<p>E-mail : <a href="mailto:example@mail.com"> cedhost@gmail.com</a></p>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<div class="copy-section">
-							<p>&copy; 2016 Ced<span style="color:yellow;"> Hosti</span>ng. All rights reserved | Design by CedCoss</a></p>
-						</div>
-					</div>
-				</div>
+<!-- Footer -->
+<footer class="footer pt-0">
+        <div class="row align-items-center justify-content-lg-between">
+          <div class="col-lg-6">
+            <div class="copyright text-center  text-lg-left  text-muted">
+              &copy; 2020 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+              <li class="nav-item">
+                <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
+              </li>
+              <li class="nav-item">
+                <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md" class="nav-link" target="_blank">MIT License</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!-- Argon Scripts -->
+</body>
+
+</html>

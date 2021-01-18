@@ -1,114 +1,265 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<?php
-session_start();
-// error_reporting(0);
-include ('admin/tblproduct.php');
-$product=new tblproduct();
-$result=$product->getheading();
-?>
 
-<!DOCTYPE HTML>
+
+<!DOCTYPE html>
 <html>
+
 <head>
-<title>cedhosting</title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Planet Hosting Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/bootstrap.js"></script>
-<!---fonts-->
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-<link href='//fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!---fonts-->
-<!--script-->
-<script src="js/modernizr.custom.97074.js"></script>
-<script src="js/jquery.chocolat.js"></script>
-<link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen">
-<!--lightboxfiles-->
-<script type="text/javascript">
-	$(function() {
-	$('.team a').Chocolat();
-	});
-</script>	
-<script type="text/javascript" src="js/jquery.hoverdir.js"></script>	
-						<script type="text/javascript">
-							$(function() {
-							
-								$(' #da-thumbs > li ').each( function() { $(this).hoverdir(); } );
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+  <meta name="author" content="Creative Tim">
+  <!-- text editor -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-							});
-						</script>						
-<!--script-->
+  <script src="https://cdn.tiny.cloud/1/u6d5o7rruhkaxjxww0o6wuw5mrey0bszj45q3d6t66n2nvzw/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script>
+  tinymce.init({
+      selector: 'textarea.editor',
+      menubar: false
+  });
+  </script>
+  <!-- text editor -->
+  <title>Admin Dashboard</title>
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/brand/favicon.png" type="image/png">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+  <!-- Icons -->
+  <link rel="stylesheet" href="assets/vendor/nucleo/css/nucleo.css" type="text/css">
+  <link rel="stylesheet" href="assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+  <!-- Page plugins -->
+  <!-- Argon CSS -->
+  <link rel="stylesheet" href="assets/css/argon.css?v=1.2.0" type="text/css">
+
+
+  <!-- Core -->
+  <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+  <script src="assets/vendor/js-cookie/js.cookie.js"></script>
+  <script src="assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+  <!-- Optional JS -->
+  <script src="assets/vendor/chart.js/dist/Chart.min.js"></script>
+  <script src="assets/vendor/chart.js/dist/Chart.extension.js"></script>
+  <!-- Argon JS -->
+  <script src="assets/js/argon.js?v=1.2.0"></script>
+  <!-- jquery cdn -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <!-- jquery cdn -->
+  <!-- datatable cdn -->
+  <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
+  </script>
+  <!-- datatable cdn -->
+  <!-- datatable css -->
+  <link rel="stylesheet" 
+  href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+  <!-- datatable css-->
+  
+  <!-- text area -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  
 </head>
+
 <body>
-	<!---header--->
-		<div class="header">
-			<div class="container">
-				<nav class="navbar navbar-default">
-					<div class="container-fluid">
-			<!-- Brand and toggle get grouped for better mobile display -->
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-								<i class="sr-only">Toggle navigation</i>
-								<i class="icon-bar"></i>
-								<i class="icon-bar"></i>
-								<i class="icon-bar"></i>
-							</button>				  
-							<div class="navbar-brand ">
-
-								<h1><a href="index.php">Ced<span style="color:red;">Host</span>ing</a></h1>
-							</div>
-						</div>
-
-			<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-							<ul class="nav navbar-nav">
-								<li ><a href="index.php">Home <i class="sr-only">(current)</i></a></li>
-								<li><a href="about.php">About</a></li>
-								
-								<li><a href="services.php">Services</a></li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hosting<i class="caret"></i></a>
-									<ul class="dropdown-menu">
-									<?php
-									foreach($result as $key=>$value):?>
-								
-											<li><a href="cat.php?id=<?php echo $value['id'];?>"><?php echo $value['prod_name'];?></a></li>
-								      
-											<?php
-									
-												endforeach; ?> 
-								
-									
-										
-									
-								
-									
-
-										
-									</ul>			
-								</li>
-								<li ><a href="pricing.php">pricing</a></li>
-								<li ><a href="blog.php">Blog</a></li>
-								<li ><a href="contact.php">Contact</a></li>
-								<li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true" style="font-size:25px;"></i></a></li>
-								<li><a href="login.php">LOGIN</a></li>
-							</ul>
-							
-									  
-						</div><!-- /.navbar-collapse -->
-					</div><!-- /.container-fluid -->
-				</nav>
-			</div>
-		</div>
+<script>
+$(document).ready( function () {
+    $('#showProduct').DataTable();
+} );
+</script>
+  <!-- Sidenav -->
+  <nav class="sidenav navbar navbar-vertical  fixed-left  
+  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+    <div class="scrollbar-inner">
+      <!-- Brand -->
+      <div class="sidenav-header  align-items-center">
+        <a class="navbar-brand" href="javascript:void(0)">
+          
+        </a>
+      </div>
+      <div class="navbar-inner">
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+          <!-- Nav items -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.php">
+                <i class="ni ni-tv-2 text-primary"></i>
+                <span class="nav-link-text">Dashboard</span>
+              </a>
+            </li>
+        </ul>
+        <ul class="dot-removal">
+        <hr class="my-3">
+          <!-- Heading -->
+          <h6 class="navbar-heading p-0 text-muted">
+            <span class="docs-normal">Products</span>
+          </h6>
+          <li  data-toggle="collapse" 
+          data-target="#products" class="collapsed active">
+            <a href="#">Products <span class="fas">&#xf103;</span></a>
+          </li>
+          <ul class="navbar-nav sub-menu collapse" id="products">
+            <li class="nav-item">
+              <a class="nav-link" href="createcategory.php">
+                <i class="ni ni-planet text-orange"></i>
+                <span class="nav-link-text">Create Category</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="addproduct.php">
+                <i class="ni ni-pin-3 text-primary"></i>
+                <span class="nav-link-text">Add Product</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="viewproducts.php">
+                <i class="ni ni-single-02 text-yellow"></i>
+                <span class="nav-link-text">View Products</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="examples/tables.html">
+                <i class="ni ni-bullet-list-67 text-default"></i>
+                <span class="nav-link-text">Create New Offers</span>
+              </a>
+            </li>
+        </ul>
+        <hr class="my-3">
+          <!-- Heading -->
+          <h6 class="navbar-heading p-0 text-muted">
+            <span class="docs-normal">Orders</span>
+          </h6>
+          <li  data-toggle="collapse" 
+          data-target="#products1" class="collapsed active">
+            <a href="#">Orders  <span class="fas">&#xf103;</span></a>
+          </li>
+          <ul class="navbar-nav sub-menu collapse" id="products1">
+            <li class="nav-item">
+              <a class="nav-link" href="examples/icons.html">
+                <i class="ni ni-planet text-orange"></i>
+                <span class="nav-link-text">Pending Orders</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="examples/map.html">
+                <i class="ni ni-pin-3 text-primary"></i>
+                <span class="nav-link-text">Completed Orders</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="examples/profile.html">
+                <i class="ni ni-single-02 text-yellow"></i>
+                <span class="nav-link-text">Cancelled Orders</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="examples/tables.html">
+                <i class="ni ni-bullet-list-67 text-default"></i>
+                <span class="nav-link-text">Generate Invoice</span>
+              </a>
+            </li>
+        </ul>
+        <hr class="my-3">
+          <!-- Heading -->
+          <h6 class="navbar-heading p-0 text-muted">
+            <span class="docs-normal">Services</span>
+          </h6>
+          <li  data-toggle="collapse" 
+          data-target="#products2" class="collapsed active">
+            <a href="#">Services  <span class="fas">&#xf103;</span></a>
+          </li>
+          <ul class="navbar-nav sub-menu collapse" id="products2">
+            <li class="nav-item">
+              <a class="nav-link" href="examples/icons.html">
+                <i class="ni ni-planet text-orange"></i>
+                <span class="nav-link-text">Active Services</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="examples/map.html">
+                <i class="ni ni-pin-3 text-primary"></i>
+                <span class="nav-link-text">Expired Services</span>
+              </a>
+            </li>
+        </ul>
+        <hr class="my-3">
+          <!-- Heading -->
+          <h6 class="navbar-heading p-0 text-muted">
+            <span class="docs-normal">Users</span>
+          </h6>
+          <li  data-toggle="collapse" 
+          data-target="#products3" class="collapsed active">
+            <a href="#">Users  <span class="fas">&#xf103;</span></a>
+          </li>
+          <ul class="navbar-nav sub-menu collapse" id="products3">
+            <li class="nav-item">
+              <a class="nav-link" href="examples/icons.html">
+                <i class="ni ni-planet text-orange"></i>
+                <span class="nav-link-text">All User List</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="examples/map.html">
+                <i class="ni ni-pin-3 text-primary"></i>
+                <span class="nav-link-text">Create New User</span>
+              </a>
+            </li>
+        </ul>
+        <hr class="my-3">
+          <!-- Heading -->
+          <h6 class="navbar-heading p-0 text-muted">
+            <span class="docs-normal">Blog</span>
+          </h6>
+          <li  data-toggle="collapse" 
+          data-target="#products4" class="collapsed active">
+            <a href="#">Blogs  <span class="fas">&#xf103;</span></a>
+          </li>
+          <ul class="navbar-nav sub-menu collapse" id="products4">
+            <li class="nav-item">
+              <a class="nav-link" href="examples/icons.html">
+                <i class="ni ni-planet text-orange"></i>
+                <span class="nav-link-text">Add New Blog</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="examples/map.html">
+                <i class="ni ni-pin-3 text-primary"></i>
+                <span class="nav-link-text">View All Blogs</span>
+              </a>
+            </li>
+        </ul>
+        <hr class="my-3">
+          <!-- Heading -->
+          <h6 class="navbar-heading p-0 text-muted">
+            <span class="docs-normal">Accounts</span>
+          </h6>
+          <li  data-toggle="collapse" 
+          data-target="#products5" class="collapsed active">
+            <a href="#">Info  <span class="fas">&#xf103;</span></a>
+          </li>
+          <ul class="navbar-nav sub-menu collapse" id="products5">
+            <li class="nav-item">
+              <a class="nav-link" href="examples/icons.html">
+                <i class="ni ni-planet text-orange"></i>
+                <span class="nav-link-text">Update Company Info</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="examples/map.html">
+                <i class="ni ni-pin-3 text-primary"></i>
+                <span class="nav-link-text">Change Security Ques</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="examples/map.html">
+                <i class="ni ni-pin-3 text-primary"></i>
+                <span class="nav-link-text">Change Password</span>
+              </a>
+            </li>
+        </ul>
+        </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
